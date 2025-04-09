@@ -1,17 +1,23 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from "./component/Navbar"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Manager from "./component/Manager"
-function App() {
- 
+import Login from './pages/login';
+import Signup from './pages/signUp';
+import LandingPage from './component/landingPage';
 
+function App() {
   return (
     <>
-      <Navbar/>
-      <div>
-        <Manager/>
-      </div>
-      <footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Manager />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
+     
     </>
   )
 }
