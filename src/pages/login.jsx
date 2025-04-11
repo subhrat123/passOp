@@ -22,7 +22,7 @@ export default function Login() {
           localStorage.setItem('token', data.token);
 
           alert('Login successful!');
-          window.location.href = '/'; //  your main app page
+          window.location.href = '/home'; //  your main app page
         } catch (error) {
           console.error('Login error:', error);
           alert(error.message);
